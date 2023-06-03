@@ -17,6 +17,7 @@
               "lodash"
             ],
             "outputPath": "../docs",
+            "baseHref": "https://elpiu.github.io/Calcolatore-online/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
