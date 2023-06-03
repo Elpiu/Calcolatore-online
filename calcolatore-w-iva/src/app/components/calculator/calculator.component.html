@@ -1,0 +1,101 @@
+<hr>
+
+<div class="">
+  <div class="note note-secondary mb-3">
+    <strong>È possibile utilizzare il nostro pratico calcolatore dell'IVA</strong>
+    per calcolare l'IVA applicata su un importo netto
+    o per calcolare l'IVA inclusa in un importo totale.
+    Le aliquote IVA possono variare nel tempo. Pertanto, è
+    sempre possibile adeguare l'aliquota IVA autonomamente.
+    <br>
+    Vedi anche: <strong><a href="http://www.agenziaentrate.gov.it" target="_blank">Agenzia Entrate Italiana</a></strong>
+  </div>
+</div>
+
+<div class="prova-container"
+     data-aos="flip-up"
+     data-aos-delay="100"
+>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group ">
+      <!-- IVA input -->
+      <div class="mb-2">
+        <label for="ivaControl" class="col-sm-2">
+          <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Iva %</span>
+        </label>
+        <input type="number" min="0" max="100"
+               class="form-control mt-n3" name="ivaControl"
+               id="ivaControl" formControlName="ivaControl"
+               required style="width: 30%">
+      </div>
+      <!-- Prezzo input -->
+      <div class="mb-2">
+        <label for="prezzoControl" class="col-sm-2">
+          <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Prezzo</span>
+        </label>
+        <input type="number" name="prezzoControl" min="0"
+               id="prezzoControl" class="form-control mt-n3"
+               required style="width: 80%"
+               formControlName="prezzoControl" required>
+      </div>
+      <div class="mb-2">
+        <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Il Prezzo inserito comprende l'iva?</span>
+        <select type="text" class="form-control"
+                formControlName="compresoIvaControl"
+                id="compresoIvaControl"
+                style="width: 30%">
+          <option value="Si" selected>Si</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="  rounded-5 border-5">
+  <div class="row g-3 mt-1">
+    <div class="col-sm-12">
+      <!-- Importo IVA input -->
+      <div class="alert alert-primary" *ngIf="resutl">
+        <div class="d-flex">
+          <p><strong>Importo IVA: </strong></p>
+          <p class="px-4">{{formatPrice(resutl)}}</p>
+        </div>
+        <div class="d-flex" *ngIf="!ivaCompresaBoolean">
+
+          <p><strong>Importo Totale con IVA: </strong></p>
+          <p class="px-4">{{formatPrice(prezzoInserito + resutl)}}</p>
+        </div>
+        <div class="d-flex" *ngIf="ivaCompresaBoolean">
+
+          <p><strong>Importo Totale senza IVA: </strong></p>
+          <p class="px-4">{{formatPrice(prezzoInserito - resutl)}}</p>
+        </div>
+
+      </div>
+      <!-- Submit button -->
+      <button type="submit" [disabled]="!myForm.valid"
+              class="btn btn-primary mb-2"
+              data-aos="fade-down"
+              data-aos-delay="100"
+              (click)="onSubmit()"
+      >Calcola
+      </button>
+    </div>
+
+    <!-- Ive Comuni -->
+    <div class="col-md-12 "
+         data-aos="flip-up"
+    >
+      <hr style="width: 50%" class="text-center">
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-primary m-2"
+                *ngFor="let item of commonsIva" (click)="setCommonsIVA(item)">{{item}}%
+        </button>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>

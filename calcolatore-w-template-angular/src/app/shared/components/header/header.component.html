@@ -1,0 +1,53 @@
+<div data-role="Header" class="header-header">
+  <div class="header-container">
+    <nav class="header-nav">
+      <div class="header-container1">
+        <a routerLink="/" class="header-link">Calcolatore Online</a>
+        <div class="header-container2">
+          <div class="header-container3">
+            <primary-pink-button
+              button="Tutti i Servizi"
+              rootClassName="primary-pink-button-root-class-name"
+            ></primary-pink-button>
+          </div>
+          <div data-role="BurgerMenu" class="header-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="header-icon">
+              <path
+                d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"
+              ></path>
+            </svg>
+          </div>
+          <div class="header-container4">
+            <secondary-button
+              rootClassName="secondary-button-root-class-name"
+            ></secondary-button>
+            <secondary-button
+              rootClassName="secondary-button-root-class-name1"
+            ></secondary-button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div data-role="MobileMenu" class="header-mobile-menu">
+    <div class="header-top">
+      <a routerLink="/" class="header-navlink">Calcolatore Online</a>
+      <div data-role="CloseMobileMenu" class="header-close-menu">
+        <svg viewBox="0 0 1024 1024" class="header-icon2">
+          <path
+            d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div class="header-mid">
+      <div class="header-menu">
+        <a routerLink="/" class="header-navlink1 Large">Home</a>
+        <a routerLink="/profile" class="header-navlink2 Large">Profile</a>
+        <a routerLink="/coming-soon" class="header-navlink3 Large">
+          Coming Soon
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

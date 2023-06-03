@@ -1,0 +1,69 @@
+<div class="prova-container">
+  <div class="prova-container1">
+    <form class="prova-form">
+      <div class="prova-container2">
+        <img
+          alt="image"
+          src="/playground_assets/rep_ita-200h.jpg"
+          class="prova-image"
+        />
+        <div class="prova-container3">
+          <h1 class="prova-text">Calcolo Codice Fiscale</h1>
+          <span class="prova-text1">
+            <span>Calcola il codice fiscale online</span>
+            <br/>
+            <br/>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group ">
+        <div class="mb-2">
+          <label for="input1" class="col-sm-2">
+            <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Cognome</span>
+          </label>
+          <input type="text" class="form-control mt-n3" id="input1" value="">
+        </div>
+        <div class="mb-2">
+          <label for="input2" class="col-sm-2">
+            <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Nome</span>
+          </label>
+          <input type="text" class="form-control mt-n3" id="input2" value="">
+        </div>
+        <div class="mb-2">
+          <label for="input3" class="col-lg-12">
+            <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Luogo di nascita</span>
+          </label>
+          <input type="text" class="form-control mt-n3" id="input3" value="">
+        </div>
+        <div class="mb-2">
+          <label for="example-date-input" class="col-lg-12 col-form-label">
+            <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Data di nascita</span>
+          </label>
+          <input class="form-control mt-n3" type="date" value="2011-08-19" id="example-date-input"
+                 style="width: 50%"/>
+        </div>
+        <div class="mb-2">
+          <label for="input4" class="col-lg-12">
+            <span class="h6 small bg-white text-muted pt-1 pl-2 pr-2">Sesso</span>
+          </label>
+
+          <select type="text" class="form-control mt-n3" id="input4"
+                  style="width: 30%">
+            <option value="M" selected>M</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <button #button class="mt-5 btn button btn-secondary btn btn-success btn-rounded animate__animated"
+            (mouseenter)="addBounce(button)"
+            (mouseleave)="removeBounce(button)"
+            [scrollTop]="addBounce(button)"
+    >
+      Calcola il codice fiscale
+    </button>
+  </div>
+</div>
+

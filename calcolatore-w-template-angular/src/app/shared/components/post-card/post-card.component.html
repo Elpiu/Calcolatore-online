@@ -1,0 +1,29 @@
+<div class="post-card-blog-post-card" [ngClass]="rootClassName">
+  <div class="post-card-container">
+    <img
+      [attr.alt]="image_alt"
+      [attr.src]="image_src"
+      image_src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDd8fHBvcnRyYWl0fGVufDB8fHx8MTYyNjM3ODk3Mg&amp;ixlib=rb-1.2.1&amp;h=1000"
+      class="post-card-image"
+    />
+  </div>
+  <div class="post-card-container1">
+    <div class="post-card-container2">
+      <span class="post-card-text">{{ label }}</span>
+      <span class="post-card-text1">{{ when }}</span>
+    </div>
+    <h1 class="post-card-text2">{{ title }}</h1>
+    <span class="post-card-text3">{{ description }}</span>
+    <div class="post-card-container3">
+      <div class="post-card-profile">
+        <img
+          [attr.alt]="profile_alt"
+          [attr.src]="profile_src"
+          class="post-card-image1"
+        />
+        <span class="post-card-text4">{{ author }}</span>
+      </div>
+      <span class="post-card-text5">Read More -&gt;</span>
+    </div>
+  </div>
+</div>
